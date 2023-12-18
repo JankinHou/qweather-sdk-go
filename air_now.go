@@ -22,6 +22,9 @@ func (r *V7AirNowRequest) Method() string {
 }
 
 func (r *V7AirNowRequest) Url() string {
+	if r.IsDev {
+		return fmt.Sprintf("%s/v7/air/now", DevApi)
+	}
 	return fmt.Sprintf("%s/v7/air/now", Api)
 }
 

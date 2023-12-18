@@ -59,6 +59,9 @@ func (c *Client) Do(request Requester, response Responder) error {
 
 	method := request.Method()
 	u, err := url.Parse(request.Url())
+	if err != nil {
+		return err
+	}
 	u.RawQuery = ps.Encode()
 
 	req, err := http.NewRequest(method, u.String(), nil)

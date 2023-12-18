@@ -23,6 +23,10 @@ func (r *V7WarningNowRequest) Method() string {
 }
 
 func (r *V7WarningNowRequest) Url() string {
+	// return fmt.Sprintf("%s/v7/warning/now", Api)
+	if r.IsDev {
+		return fmt.Sprintf("%s/v7/warning/now", DevApi)
+	}
 	return fmt.Sprintf("%s/v7/warning/now", Api)
 }
 

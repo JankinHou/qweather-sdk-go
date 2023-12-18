@@ -23,6 +23,7 @@ func (r *V7TropicalStormListRequest) Method() string {
 }
 
 func (r *V7TropicalStormListRequest) Url() string {
+	
 	return fmt.Sprintf("%s/v7/tropical/storm-list", Api)
 }
 

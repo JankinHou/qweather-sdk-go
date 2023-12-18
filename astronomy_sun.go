@@ -24,6 +24,9 @@ func (r *V7AstronomySunRequest) Method() string {
 }
 
 func (r *V7AstronomySunRequest) Url() string {
+	if r.IsDev {
+		return fmt.Sprintf("%s/v7/astronomy/sun", DevApi)
+	}
 	return fmt.Sprintf("%s/v7/astronomy/sun", Api)
 }
 

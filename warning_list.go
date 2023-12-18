@@ -22,6 +22,9 @@ func (r *V7WarningListRequest) Method() string {
 }
 
 func (r *V7WarningListRequest) Url() string {
+	if r.IsDev {
+		return fmt.Sprintf("%s/v7/warning/list", DevApi)
+	}
 	return fmt.Sprintf("%s/v7/warning/list", Api)
 }
 

@@ -23,6 +23,9 @@ func (r *V7Air5DaysRequest) Method() string {
 }
 
 func (r *V7Air5DaysRequest) Url() string {
+	if r.IsDev {
+		return fmt.Sprintf("%s/v7/air/5d", DevApi)
+	}
 	return fmt.Sprintf("%s/v7/air/5d", Api)
 }
 

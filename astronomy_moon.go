@@ -24,6 +24,9 @@ func (r *V7AstronomyMoonRequest) Method() string {
 }
 
 func (r *V7AstronomyMoonRequest) Url() string {
+	if r.IsDev {
+		return fmt.Sprintf("%s/v7/astronomy/moon", DevApi)
+	}
 	return fmt.Sprintf("%s/v7/astronomy/moon", Api)
 }
 
